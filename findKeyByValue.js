@@ -12,14 +12,23 @@ const bestTVShowsByGenre = {
   drama:  "The Wire"
 };
 
-const findKeyByValue = function(ShowObject, value) {
+/*const findKeyByValue = function(ShowObject, value) {
   for (const item in ShowObject) {
     if (ShowObject[item] === value) 
     {
       return ShowObject[item];
     }        
   }
+}*/
+const findKeyByValue = function(ShowObject, value) {
+  for (const item of Object.keys(ShowObject)) {
+    if (ShowObject[item] === value) 
+    {
+      return ShowObject[item];
+    }        
+  }
 }
+
   
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "The Wire");
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
