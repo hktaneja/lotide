@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@hktaneja/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "for testing pursposes only",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/hktaneja/lotide.git"
   },
-  "author": "",
+  "author": "Harpreet Kaur",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hktaneja/lotide/issues"
