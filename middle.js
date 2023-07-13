@@ -1,5 +1,6 @@
 const assertArraysEqual = require('./assertArraysEqual');
 
+// MIDDLE FUNCTION IMPLEMENTATION
 const middle = function(array) {
   let middleArray = [];
   let index = 0;

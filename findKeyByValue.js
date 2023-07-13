@@ -1,4 +1,4 @@
-// FUNCTION IMPLEMENTATION
+// TEST FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   if (actual === expected)
     console.log(`Assertion passed ${actual} === ${expected}`);
@@ -12,6 +12,7 @@ const bestTVShowsByGenre = {
   drama:  "The Wire"
 };
 
+// FUNCTION IMPLEMENTATION 
 const findKeyByValue = function(ShowObject, value) {
   for (const item of Object.keys(ShowObject)) {
     if (ShowObject[item] === value) 
@@ -21,7 +22,7 @@ const findKeyByValue = function(ShowObject, value) {
   }
 }
 
-  
+// CALING TEST FUNCTIONS
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "The Wire");
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
 assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);

@@ -1,3 +1,4 @@
+//  FUNCTION IMPLEMENTATION
 const takeUntil = function(array, callback) {
   const result = [];
   for (const element of array) {
@@ -39,6 +40,7 @@ const eqArrays = function(array1, array2) {
   return true;   
 }
 
+//CALLING TEST CODE
 assertArraysEqual(takeUntil(data1, x => x < 0), [1, 2, 5, 7, 2]);
 assertArraysEqual(takeUntil(data2, x => x === ','), ["I've", "been", "to", "Hollywood"]);
 

@@ -1,6 +1,7 @@
 const words = ["ground", "control", "to", "major", "tom"];
 const cars = ["honda", "toyota", "hyundai", "chverolet"];
 
+// MAP FUNCTION IMPLEMENTATION
 const map = function(array, callback) {
   const results = [];
   for (let item of array) {
@@ -10,7 +11,8 @@ const map = function(array, callback) {
 }
 
 const results1 = map(words, word => word[0]);
-console.log(results1);
+
+//TEST CODE
 
 const assertArraysEqual = function(firstArray, secondArray) {
   if (eqArrays(firstArray, secondArray) === true)
@@ -29,6 +31,7 @@ const eqArrays = function(array1, array2) {
   return true;   
 }
 
+//CALLING THE TEST FUNCTIONS
 assertArraysEqual(map(words, word => word[0]), ['g', 'c', 't', 'm' ,'t']);
 assertArraysEqual(map(words, word => word[0]), ['g', 's', 't', 'l' ,'t']);
 assertArraysEqual(map(cars, word => word[0]), ['h', 't', 'h', 'c']);

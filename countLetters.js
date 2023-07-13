@@ -1,4 +1,4 @@
-// FUNCTION IMPLEMENTATION
+// TEST FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   if (actual === expected)
     console.log(`Assertion passed ${actual} === ${expected}`);
@@ -6,6 +6,7 @@ const assertEqual = function(actual, expected) {
     console.log(`Assertion Failed ${actual} !== ${expected}`);
 };
 
+// FUNCTION IMPLEMENTATION
 const countLetters = function(sentence) {
   const result = {};
   for(const letter of sentence ){
@@ -19,8 +20,8 @@ const countLetters = function(sentence) {
   return result;
 }
 const result1 = countLetters("lighthouse in the house");
-console.log(result1)
 
+//CALLING TEST FUNCTIONS 
 assertEqual(result1["l"], 1);
 assertEqual(result1["h"], 4);
 assertEqual(result1["s"], 2);

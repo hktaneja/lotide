@@ -6,6 +6,7 @@ const assertEqual = function(actual, expected) {
     console.log(`Assertion Failed ${actual} !== ${expected}`);
 };
 
+// FUNCTION IMPLEMENTATION
 const findKey = function(findObject, callback) {
   for (const key in findObject) {
     if (callback(findObject[key])) {

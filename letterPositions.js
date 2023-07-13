@@ -33,7 +33,7 @@ const letterPositions  = function(sentence) {
 return result;
 }
 const result1 = letterPositions("lighthouse in the house");
-console.log(result1);
+
 
 //Testing the logic
 
