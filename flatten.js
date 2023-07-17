@@ -1,6 +1,7 @@
 // TEST FUNCTION IMPLEMENTATION
 const assertArraysEqual = function(firstArray, secondArray) {
-  if ((flatten (firstArray)).join() === secondArray.join())
+  // Check if the flattened first array is equal to the second array
+  if ((flatten(firstArray)).join() === secondArray.join())
     console.log(`Assertion passed ${firstArray} === ${secondArray}`);
   else
     console.log(`Assertion Failed ${firstArray} !== ${secondArray}`);
@@ -12,16 +13,16 @@ const flatten  = function(array) {
   if (array.length !== 0) {
     for (let i = 0; i < array.length; i++) {
       if (Array.isArray(array[i])) {
+        // If the element is an array, loop through its elements and push them to the flattenArray
         for (let j = 0; j < array[i].length; j++) {
           flattenArray.push(array[i][j]);
         }
-      }
-      else
+      } else
         flattenArray.push(array[i]);
     }
     return flattenArray;
-  } 
-}
+  }
+};
 
 // CALLING TEST FUNCTION
 assertArraysEqual([1, 2, [3, 4], 5, [6]], [1, 2, 3, 4, 5, 6]);

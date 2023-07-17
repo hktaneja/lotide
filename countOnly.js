@@ -6,11 +6,11 @@ const assertEqual = function(actual, expected) {
     console.log(`Assertion Failed ${actual} !== ${expected}`);
 };
 
-// FUNCTION IMPLEMENTATION
+// Count the occurrences of specific items in an array.
 const countOnly = function(allItems, itemsToCount) {
   const results = {};
   for (const item of allItems) {
-    if (itemsToCount[item]) { 
+    if (itemsToCount[item]) {
       if (results[item]) {
         results[item] += 1;
       } else {
@@ -19,8 +19,8 @@ const countOnly = function(allItems, itemsToCount) {
     }
   }
   return results;
-}
-
+};
+// Test cases
 const firstNames = [
   "Karl",
   "Salima",

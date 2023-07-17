@@ -1,3 +1,5 @@
+// TAIL FUNCTION IMPLEMENTATION
+//Get the tail (all elements except the first) of an array.
 const tail = function(mainArray) {
   const tailArray = [];
   let  j = 0;
@@ -5,7 +7,7 @@ const tail = function(mainArray) {
     tailArray[j] = mainArray[i];
     j++;
   }
-  return tailArray; 
+  return tailArray;
 };
 
 module.exports = tail;
