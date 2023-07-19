@@ -1,11 +1,4 @@
-// TEST FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  // Check if the actual and expected values are equal
-  if (actual === expected)
-    console.log(`Assertion passed ${actual} === ${expected}`);
-  else
-    console.log(`Assertion Failed ${actual} !== ${expected}`);
-};
+const assertEqual = require('./assertEqual');
 
 const bestTVShowsByGenre = {
   sciFi: "The Expanse",
@@ -17,12 +10,14 @@ const bestTVShowsByGenre = {
 const findKeyByValue = function(ShowObject, value) {
   for (const item of Object.keys(ShowObject)) {
     if (ShowObject[item] === value) {
-      return ShowObject[item];
+      return item;
     }
   }
 };
 
 // CALING TEST FUNCTIONS
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "The Wire");
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sciFi");
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
 assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+
+module.exports = findKeyByValue;

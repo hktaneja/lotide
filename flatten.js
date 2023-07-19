@@ -1,11 +1,4 @@
-// TEST FUNCTION IMPLEMENTATION
-const assertArraysEqual = function(firstArray, secondArray) {
-  // Check if the flattened first array is equal to the second array
-  if ((flatten(firstArray)).join() === secondArray.join())
-    console.log(`Assertion passed ${firstArray} === ${secondArray}`);
-  else
-    console.log(`Assertion Failed ${firstArray} !== ${secondArray}`);
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
 // FUNCTION IMPLEMENTATION
 const flatten  = function(array) {
@@ -13,10 +6,8 @@ const flatten  = function(array) {
   if (array.length !== 0) {
     for (let i = 0; i < array.length; i++) {
       if (Array.isArray(array[i])) {
-        // If the element is an array, loop through its elements and push them to the flattenArray
-        for (let j = 0; j < array[i].length; j++) {
-          flattenArray.push(array[i][j]);
-        }
+        // If the element is an array, agian call the function and push them to the flattenArray
+        flattenArray = flattenArray.concat(flatten(array[i])); // Use concat to merge arrays
       } else
         flattenArray.push(array[i]);
     }
@@ -25,5 +16,7 @@ const flatten  = function(array) {
 };
 
 // CALLING TEST FUNCTION
-assertArraysEqual([1, 2, [3, 4], 5, [6]], [1, 2, 3, 4, 5, 6]);
-assertArraysEqual([1, 2, [3, 4, 5], 5, [6, 6]], [1, 2, 3, 4, 5, 5, 6, 6]);
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+assertArraysEqual(flatten([1, 2, [3, 4, 5], 5, [6, 6]]), [1, 2, 3, 4, 5, 5, 6, 6]);
+assertArraysEqual(flatten([1, 2, [3, [4, 5]], 6]) , [1, 2, 3, 4, 5, 6]);
+module.exports = flatten;

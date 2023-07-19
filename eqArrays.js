@@ -1,11 +1,5 @@
-// TEST FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  // Check if the actual and expected values are equal
-  if (actual === expected)
-    console.log(`Assertion passed ${actual} === ${expected}`);
-  else
-    console.log(`Assertion Failed ${actual} !== ${expected}`);
-};
+const assertEqual = require('./assertEqual');
+
 //Compare two arrays for equality
 const eqArrays = function(array1, array2) {
   // Check if the lengths of the arrays are different

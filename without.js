@@ -1,11 +1,5 @@
-// TEST FUNCTION IMPLEMENTATION
-// Compare two arrays for equality
-const assertArraysEqual = function(firstArray, secondArray) {
-  if (firstArray.join() === secondArray.join())
-    console.log(`Assertion passed ${firstArray} === ${secondArray}`);
-  else
-    console.log(`Assertion Failed ${firstArray} !== ${secondArray}`);
-};
+const assertArraysEqual = require('./assertArraysEqual');
+
 // Remove specified items from an array and return a new array without those items.
 const without = function(sourceArray, itemsToRemoveArray) {
   let modifiedArray = [];
@@ -20,17 +14,15 @@ const without = function(sourceArray, itemsToRemoveArray) {
     if (!found)
       modifiedArray.push(sourceArray[i]);
   }
+  return modifiedArray;
 };
 const words  = ["hello", "world", "lighthouse"];
 const numbers = [1, 2, 3];
 const values = ["1", "2", "3"];
 
-without(words, ["lighthouse"]);  // => ["hello", "world"]
-without(numbers, [1]); // => [2, 3]
-without(values, [1, 2, "3"]); // => ["1", "2"]
-
 //CALLING TEST FUNCTIONS
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
-assertArraysEqual(numbers, [1, 2, 3]);
-assertArraysEqual(values, ["1", "2", "3"]);
+assertArraysEqual(without(words, ["lighthouse"]), ["hello", "world"]);
+assertArraysEqual(without(numbers, [1]), [2, 3]);
+assertArraysEqual(without(values, [1, 2, "3"]), ["3"]);
 
+module.exports = without;

@@ -1,10 +1,5 @@
-// TEST FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  if (actual === expected)
-    console.log(`Assertion passed ${actual} === ${expected}`);
-  else
-    console.log(`Assertion Failed ${actual} !== ${expected}`);
-};
+const assertEqual = require('./assertEqual');
+
 //Count the occurrences of each letter in a given sentence.
 const countLetters = function(sentence) {
   const result = {};
@@ -26,3 +21,5 @@ assertEqual(result1["l"], 1);
 assertEqual(result1["h"], 4);
 assertEqual(result1["s"], 2);
 assertEqual(result1["g"], 2);
+
+module.exports = countLetters;
